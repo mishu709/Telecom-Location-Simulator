@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Telecom Location Simulator</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header><div class="logo">⌁</div><div><h1>Telecom Location Simulator</h1><p>Explore how network measurements can estimate a device position.</p></div><span class="badge">SIMULATION ONLY</span></header>
+<main>
+<section class="panel controls">
+<p class="eyebrow">Mishu's Cell</p><h2>Run a simulation</h2>
+<p class="muted">Enter a sample number to generate a repeatable fictional tower scenario. The digits only seed the demo; they do not reveal the number’s region or real location.</p>
+<form id="sim-form">
+<label for="sample-number">Sample phone number</label>
+<input id="sample-number" type="tel" value="+881" maxlength="16" required>
+<small>No call or SMS is sent.</small><button id="simulate-button">Simulate position</button>
+</form>
+<p id="status" role="status">Ready.</p>
+<hr><h3>Methods illustrated</h3>
+<ul><li><b>Cell ID</b><small>Identifies a serving cell area</small></li><li><b>Signal strength</b><small>Radio strength is affected by distance and obstacles</small></li><li><b>Timing measurements</b><small>Can provide distance-related information</small></li><li><b>Multilateration</b><small>Combines measurements to estimate position</small></li></ul>
+</section>
+<section class="panel map-panel"><div class="map-heading"><div><h2>Network map</h2><p class="muted">Fictional demo area near Dhaka, Bangladesh</p></div><span>🔵 Towers · 🔴 Estimate</span></div>
+<div id="map"></div><small>Map tiles from OpenStreetMap; tower locations and readings are fictional.</small></section>
+<aside>
+<section class="panel"><p class="eyebrow">SIMULATED OUTPUT</p><h2>Estimated position</h2><div class="coordinates"><b id="coordinates">Not calculated yet</b><small id="accuracy">Illustrative accuracy radius: —</small></div>
+<dl><dt>Measurement method</dt><dd id="method">—</dd><dt>Towers in sample</dt><dd id="tower-count">—</dd><dt>Sample number</dt><dd id="shown-number">—</dd></dl></section>
+<section class="panel"><h2>Fictional tower readings</h2><div class="table-wrap"><table><thead><tr><th>Cell ID</th><th>Signal</th><th>Distance*</th></tr></thead><tbody id="tower-rows"><tr><td colspan="3">Run simulation first.</td></tr></tbody></table></div><small>*Illustrative values, not real network measurements.</small></section>
+<section class="notice"><b>Privacy & accuracy</b><p>The entered digits only seed a fictional demonstration around Dhaka. No real phone, subscriber, cell tower, carrier network, or phone-number database is queried. Actual carrier positioning requires authorized network access and legal permission.</p></section>
+</aside>
+</main>
+<footer>Student research prototype · Fictional data only · Not a real tracking service</footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="/app.js"></script>
+</body></html>
